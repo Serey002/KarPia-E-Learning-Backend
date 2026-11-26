@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: KarPia E-Learning API Prod
+
+server:
+  port: 8081

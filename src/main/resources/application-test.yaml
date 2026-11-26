@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: KarPia E-Learning API Test
+
+server:
+  port: 8082
