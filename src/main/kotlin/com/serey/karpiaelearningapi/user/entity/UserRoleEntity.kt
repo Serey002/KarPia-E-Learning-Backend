@@ -24,6 +24,7 @@ class UserRoleEntity(
 
     @MapsId("roleId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "role_id", nullable = false)
     var role: RoleEntity,
 
     @Column(name = "assigned_at", nullable = false)

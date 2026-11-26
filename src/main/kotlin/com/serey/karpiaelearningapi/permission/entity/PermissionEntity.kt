@@ -13,9 +13,9 @@ class PermissionEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-    @Column(nullable = false, unique = true)
+    @Column( name = "name",nullable = false, unique = true, length = 100)
     var name: String,
-    @Column(length = 255)
+    @Column(name = "description",length = 255)
     var description: String? = null
 ) {
 }

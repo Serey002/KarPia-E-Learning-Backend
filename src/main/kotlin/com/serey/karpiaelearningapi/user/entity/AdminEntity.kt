@@ -25,11 +25,11 @@ class AdminEntity(
         unique = true
     )
     var user: UserEntity,
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name", nullable = false, length = 100)
     var firstName: String,
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name", nullable = false, length = 100)
     var lastName: String,
-    @Column(name = "phone_number", nullable = false, unique = true)
+    @Column(name = "phone_number", nullable = false, unique = true, length = 30)
     var phoneNumber: String,
     @Column(name = "created_at", nullable = false)
     var createdAt: LocalDateTime = LocalDateTime.now(),
@@ -37,7 +37,7 @@ class AdminEntity(
     var updatedAt: LocalDateTime = LocalDateTime.now(),
 ) {
     @PreUpdate
-    fun Update() {
+    fun update() {
         updatedAt = LocalDateTime.now()
     }
 }

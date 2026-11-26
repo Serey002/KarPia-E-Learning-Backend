@@ -14,11 +14,11 @@ class RoleEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-    @Column(nullable = false, unique = true)
+    @Column(name = "name",nullable = false, unique = true, length = 50)
     var name: String,
-    @Column(name = "description")
+    @Column(name = "description", length = 255)
     var description: String? = null,
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     var createdAt: LocalDateTime = LocalDateTime.now(),
 ) {
 }

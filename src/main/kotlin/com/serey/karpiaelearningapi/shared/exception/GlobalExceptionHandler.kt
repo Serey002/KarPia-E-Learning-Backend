@@ -78,4 +78,29 @@ class GlobalExceptionHandler {
                 )
             )
     }
+
+    @ExceptionHandler(DuplicateEmailException::class)
+    fun handleDuplicateEmailException(
+        e: DuplicateEmailException
+    ): ResponseEntity<ApiResponse<Nothing>> {
+        return ResponseEntity
+            .status(HttpStatus.CONFLICT)
+            .body(ApiResponse.failure(
+                message = e.message ?: "Email already exists",
+            )
+        )
+    }
+
+    @ExceptionHandler(UsernameAlreadyExistException::class)
+    fun handleUsernameAlreadyExistException(
+        e: UsernameAlreadyExistException
+    ): ResponseEntity<ApiResponse<Nothing>> {
+        return ResponseEntity
+            .status(HttpStatus.CONFLICT)
+            .body(
+                ApiResponse.failure(
+                    message = e.message ?: "Username already exists",
+                )
+            )
+    }
 }

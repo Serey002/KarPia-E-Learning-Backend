@@ -9,5 +9,5 @@ data class RolePermissionId(
     @Column(name = "role_id")
     var roleId: Long? = null,
     @Column(name = "permission_id")
-    var permissionId: String? = null,
+    var permissionId: Long? = null,
 ): Serializable
