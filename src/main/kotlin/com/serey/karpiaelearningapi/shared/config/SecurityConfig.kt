@@ -21,6 +21,7 @@ class SecurityConfig{
                     HttpMethod.POST,
                     Appconstants.MAIN_PATH+"/auth/register/student",
                     Appconstants.MAIN_PATH+"/auth/login/admin",
+                    Appconstants.MAIN_PATH+"/auth/login/student",
                 ).permitAll()
                     it.anyRequest().authenticated()
             }

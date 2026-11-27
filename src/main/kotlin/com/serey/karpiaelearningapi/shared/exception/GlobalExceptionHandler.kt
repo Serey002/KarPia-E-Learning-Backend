@@ -103,4 +103,30 @@ class GlobalExceptionHandler {
                 )
             )
     }
+
+    @ExceptionHandler(AuthenticationException::class)
+    fun handleAuthenticationException(
+        e: AuthenticationException
+    ): ResponseEntity<ApiResponse<Nothing>> {
+        return ResponseEntity
+            .status(HttpStatus.UNAUTHORIZED)
+            .body(
+                ApiResponse.failure(
+                    message = e.message ?: "Authentication error",
+                )
+            )
+    }
+
+    @ExceptionHandler(ForbiddenException::class)
+    fun handleForbiddenException(
+        e: ForbiddenException
+    ): ResponseEntity<ApiResponse<Nothing>> {
+        return ResponseEntity
+            .status(HttpStatus.FORBIDDEN)
+            .body(
+                ApiResponse.failure(
+                    message = e.message ?: "Forbidden"
+                )
+            )
+    }
 }
