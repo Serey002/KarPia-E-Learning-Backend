@@ -1,5 +1,5 @@
 package com.serey.karpiaelearningapi.shared.exception
 
-class DuplicateEmailException(
+class DuplicateResourceException(
     message: String,
 ): RuntimeException(message)

@@ -24,7 +24,7 @@ class UserEntity(
     var password: String?,
     @Column(name = "is_active",nullable = false)
     var active: Boolean = true,
-    @Column(name = "created_at",nullable = false)
+    @Column(name = "created_at",nullable = false, updatable = false)
     var createdAt: LocalDateTime = LocalDateTime.now(),
     @Column( name = "updated_at",nullable = false)
     var updatedAt: LocalDateTime = LocalDateTime.now(),

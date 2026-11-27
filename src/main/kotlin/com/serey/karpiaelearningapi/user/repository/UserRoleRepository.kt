@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository
 interface UserRoleRepository: JpaRepository<UserRoleEntity, UserRoleId> {
     fun findAllByUser_Id(userId: Long): List<UserRoleEntity>
     fun findAllByRole_Id(roleId: Long): List<UserRoleEntity>
-    fun existsByUser_IdAndRole_Id(userId: Long, email: String): Boolean
+    fun existsByUser_IdAndRole_Id(userId: Long, roleId: Long): Boolean
 }

@@ -79,14 +79,14 @@ class GlobalExceptionHandler {
             )
     }
 
-    @ExceptionHandler(DuplicateEmailException::class)
+    @ExceptionHandler(DuplicateResourceException::class)
     fun handleDuplicateEmailException(
-        e: DuplicateEmailException
+        e: DuplicateResourceException
     ): ResponseEntity<ApiResponse<Nothing>> {
         return ResponseEntity
             .status(HttpStatus.CONFLICT)
             .body(ApiResponse.failure(
-                message = e.message ?: "Email already exists",
+                message = e.message ?: "Resource already exists",
             )
         )
     }

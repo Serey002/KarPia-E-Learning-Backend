@@ -10,10 +10,10 @@ data class ApiResponse<T>(
     val errors: Map<String, String>? = null
 ) {
     companion object {
-        fun <T> success(mesage: String, data: T? = null): ApiResponse<T> {
+        fun <T> success(message: String, data: T? = null): ApiResponse<T> {
             return ApiResponse(
                 success = true,
-                message = mesage,
+                message = message,
                 data = data,
             )
         }
